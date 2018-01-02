@@ -1,0 +1,4 @@
+Band Selection is a process used to reduce the number of bands present in the hyperspectral image. 
+Each hyperspectral image is of the form [X,Y,Z] where [X,Y] are the spatial dimenions and Z is the number of spectral bands. 
+Memory consumption and performance is very much affected by the size of the image, which includes the number of bands too. 
+
