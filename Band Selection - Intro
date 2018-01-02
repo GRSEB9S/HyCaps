@@ -1,0 +1,26 @@
+Band Selection is a process used to reduce the number of bands present in the hyperspectral image. 
+Each hyperspectral image is of the form [X,Y,Z] where [X,Y] are the spatial dimenions and Z is the number of spectral bands. 
+Memory consumption and performance is very much affected by the size of the image, which includes the number of bands too. 
+
+From Spectral Python website, we can see how much memory it is needed to load the whole cube. 
+
+Ref: http://www.spectralpython.net/fileio.html#loading-entire-images
+
+Note Before calling the load method, it is important to consider the amount of memory that will be consumed by the resulting ImageArray object. Since spectral.ImageArray uses 32-bit floating point values, the amount of memory consumed will be approximately 4 * numRows * numCols * numBands bytes.
+
+The no of bands plays an important role here. Band Selection techniques are used to reduce the dimensionality by selecting only certain bands to represent the hyperspectral data cube. However, the band selection is valid only when it serves the purpose. It should both reduce the dimensionality and preserve information of the data cube. 
+
+For example, In [1], a 1D CNN is used to find the bands required to represent the data cube whereas Rank Minimization is used in [2] for band selection. Note that [1,2] are recent papers which involve band selection but band selection techniques have been used for around a decade or so. 
+
+Essentially, we are trying to represent the spectral signatures of end members in the scene as accurately as possible while reducting the dimension of the image 
+
+Ref : 
+
+[1] Y. Zhan et al., "A new hyperspectral band selection approach based on convolutional neural network," 2017 IEEE International Geoscience and Remote Sensing Symposium (IGARSS), Fort Worth, TX, 2017, pp. 3660-3663
+
+[2] G. Zhu, Y. Huang, S. Li, J. Tang and D. Liang, "Hyperspectral Band Selection via Rank Minimization," in IEEE Geoscience and Remote Sensing Letters, vol. 14, no. 12, pp. 2320-2324, Dec. 2017.
+
+  
+
+ 
+
